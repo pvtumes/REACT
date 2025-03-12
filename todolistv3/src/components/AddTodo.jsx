@@ -1,17 +1,16 @@
-import { useState } from "react";
+import { useRef } from "react";
 
 function AddTodo({ onNewItem }) {
-  const [todoName, SetTodoname] = useState("");
-  const [tododate, settododate] = useState("");
+  const todoNameRef = useRef("");
+  const todoDateRef = useRef("");
+  const noOfUpdates = useRef(0);
 
-  const handleNameChange = (event) => {
-    console.log(event.target.value);
-    SetTodoname(event.target.value);
+  const handleNameChange = () => {
+    noOfUpdates.current += 1;
   };
 
-  const handleDateChange = (event) => {
-    console.log(event.target.value);
-    settododate(event.target.value);
+  const handleDateChange = () => {
+    console.log(noOfUpdates.current);
   };
 
   return (
@@ -19,17 +18,19 @@ function AddTodo({ onNewItem }) {
       <div className="row">
         <div className="col-4">
           <input
+            ref={todoNameRef} // ✅ Using useRef
             onChange={handleNameChange}
-            value={todoName} // Controlled input
             type="text"
             placeholder="Enter to do here......"
+            defaultValue="" // ✅ Avoid controlled input issue
           />
         </div>
         <div className="col-4">
           <input
+            ref={todoDateRef} // ✅ Using useRef
             onChange={handleDateChange}
-            value={tododate} // Controlled input
             type="date"
+            defaultValue=""
           />
         </div>
         <div className="col-2">
@@ -37,10 +38,12 @@ function AddTodo({ onNewItem }) {
             type="button"
             className="btn btn-success"
             onClick={() => {
+              const todoName = todoNameRef.current.value;
+              const tododate = todoDateRef.current.value;
               if (todoName && tododate) {
                 onNewItem(todoName, tododate);
-                SetTodoname(""); // Clear input after adding
-                settododate(""); // Clear input after adding
+                todoNameRef.current.value = ""; // ✅ Clear input after adding
+                todoDateRef.current.value = ""; // ✅ Clear input after adding
               }
             }}
           >
