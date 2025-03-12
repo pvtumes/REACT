@@ -1,0 +1,81 @@
+/* Calculator Container */
+.calculator {
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  width: 280px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(145deg, #000000, #ff0000);
+  padding: 15px;
+  text-align: center;
+}
+
+/* Input Display */
+.input-window {
+  width: 90%;
+  height: 60px;
+  margin: 10px auto;
+  font-size: 22px;
+  text-align: right;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Container */
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+/* Buttons */
+.btn {
+  height: 50px;
+  width: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: linear-gradient(145deg, #f9f9f9, #e0e0e0);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+}
+
+/* Button Hover Effect */
+.btn:hover {
+  background: #dcdcdc;
+  transform: scale(1.05);
+}
+
+/* Special Buttons */
+.operator {
+  background: #ff9f43;
+  color: white;
+}
+
+.operator:hover {
+  background: #ff8500;
+}
+
+.equals {
+  background: #4cd137;
+  color: white;
+}
+
+.equals:hover {
+  background: #44b927;
+}
+
+.clear {
+  background: #e84118;
+  color: white;
+}
+
+.clear:hover {
+  background: #c23616;
+}

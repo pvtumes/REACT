@@ -1,0 +1,43 @@
+.custom {
+    background-color: #54a8fc;
+    /* Light gray background */
+    border-radius: 8px;
+    /* Smooth corners */
+    padding: 12px 16px;
+    /* Comfortable padding */
+    font-size: 18px;
+    /* Readable text */
+    font-weight: 500;
+    /* Medium bold */
+    color: #333;
+    /* Dark text for contrast */
+    display: flex;
+    align-items: center;
+    
+    /* Keeps content spaced */
+    transition: all 0.3s ease-in-out;
+    /* Smooth effects */
+    border: 1px solid #ddd;
+    width: 400px;
+    
+    /* Subtle border */
+}
+
+.custom:hover {
+    background-color: #e9ecef;
+    /* Slightly darker on hover */
+    transform: scale(1.02);
+    /* Subtle zoom effect */
+}
+
+.custom::before {
+    content: "🍽️";
+    /* Adds a food-related emoji */
+    margin-right: 10px;
+}
+
+.button{
+    margin-left: auto;
+        /* Pushes button to the right */
+    float: right;
+}
