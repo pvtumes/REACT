@@ -1,4 +1,5 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+import { TodoItemscontext } from "../store/todo-items-store";
 
 function AddTodo({ onNewItem }) {
   const todoNameRef = useRef("");
@@ -12,6 +13,8 @@ function AddTodo({ onNewItem }) {
   const handleDateChange = () => {
     console.log(noOfUpdates.current);
   };
+  useContext(TodoItemscontext);
+  
 
   return (
     <>
