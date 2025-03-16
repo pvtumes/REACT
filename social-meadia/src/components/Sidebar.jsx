@@ -1,4 +1,8 @@
-export default function Sidebar() {
+export default function Sidebar({ selectedTab, setSelectedTab }) {
+  const handleOnClick = (tabName) => {
+    setSelectedTab(tabName);
+  };
+
   return (
     <div
       className="sidebar d-flex flex-column flex-shrink-0 p-3 bg-light"
@@ -15,40 +19,66 @@ export default function Sidebar() {
       </a>
       <hr />
       <ul className="nav nav-pills flex-column mb-auto">
-        <li className="nav-item">
-          <a href="#" className="nav-link active" aria-current="page">
+        <li className="nav-item" onClick={() => handleOnClick("Home")}>
+          <a
+            href="#"
+            className={`nav-link ${
+              selectedTab === "Home" ? "text-white active" : "link-dark"
+            }`}
+            aria-current="page"
+          >
             <svg className="bi me-2" width="16" height="16">
               <use xlinkHref="#home"></use>
             </svg>
             Home
           </a>
         </li>
-        <li>
-          <a href="#" className="nav-link link-dark">
+        <li onClick={() => handleOnClick("CreatePost")}>
+          <a
+            href="#"
+            className={`nav-link ${
+              selectedTab === "CreatePost" ? "text-white active" : "link-dark"
+            }`}
+          >
             <svg className="bi me-2" width="16" height="16">
               <use xlinkHref="#speedometer2"></use>
             </svg>
-           Create Post
+            Create Post
           </a>
         </li>
-        <li>
-          <a href="#" className="nav-link link-dark">
+        <li onClick={() => handleOnClick("Orders")}>
+          <a
+            href="#"
+            className={`nav-link ${
+              selectedTab === "Orders" ? "text-white active" : "link-dark"
+            }`}
+          >
             <svg className="bi me-2" width="16" height="16">
               <use xlinkHref="#table"></use>
             </svg>
             Orders
           </a>
         </li>
-        <li>
-          <a href="#" className="nav-link link-dark">
+        <li onClick={() => handleOnClick("Products")}>
+          <a
+            href="#"
+            className={`nav-link ${
+              selectedTab === "Products" ? "text-white active" : "link-dark"
+            }`}
+          >
             <svg className="bi me-2" width="16" height="16">
               <use xlinkHref="#grid"></use>
             </svg>
             Products
           </a>
         </li>
-        <li>
-          <a href="#" className="nav-link link-dark">
+        <li onClick={() => handleOnClick("Customers")}>
+          <a
+            href="#"
+            className={`nav-link ${
+              selectedTab === "Customers" ? "text-white active" : "link-dark"
+            }`}
+          >
             <svg className="bi me-2" width="16" height="16">
               <use xlinkHref="#people-circle"></use>
             </svg>

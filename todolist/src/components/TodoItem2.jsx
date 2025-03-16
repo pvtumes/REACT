@@ -3,9 +3,8 @@ function TodoItem2() {
   let tododate = "12/02/2004";
   return (
     <>
-      
       <div>
-        <div class="row">
+        <div className="row">
           <div className="col-4 text">{todo}</div>
           <div className="col-4 text">{tododate}</div>
           <div className="col-2 ">
